@@ -1,13 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 
-import Keypad from './components/Keypad';
-import EyesOnMe from './components/EyesOnMe';
+    
+// Code EyesOnMe Component Here
+import React, { Component } from 'react';
 
-ReactDOM.render(
-  <div>
-    <Keypad />
-    <EyesOnMe />
-  </div>,
-  document.getElementById('global')
-);
+export default class EyesOnMe extends Component {
+
+  handleFocus = ()=> console.log('Good!')
+  handleBlur = ()=> console.log('Hey! Eyes on me!')
+
+  render() {
+    return (
+      <button onFocus={this.handleFocus} onBlur={this.handleBlur} />
+    )
+  }
+
+}
